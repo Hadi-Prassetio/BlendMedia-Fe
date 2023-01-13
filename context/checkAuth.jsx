@@ -29,7 +29,7 @@ export default function CheckAuth({ children }) {
         payload,
       });
     } catch (error) {
-      if (error.response.data.code === 400) {
+      if (error.response?.data.code === 400) {
         router.push("/");
       }
     }

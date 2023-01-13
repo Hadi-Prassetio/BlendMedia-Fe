@@ -27,8 +27,8 @@ export default function ListProduct() {
     try {
       await API.delete(`/product/${id}`);
       Success({ message: "Product Deleted" });
-      const response = await API.get(`/user/${auth?.user?.id}`);
-      setProduct(response.data.data.products);
+      const response = await API.get("/products");
+      setProduct(response.data.data);
     } catch (error) {
       console.log(error);
     }
